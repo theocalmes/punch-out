@@ -120,8 +120,13 @@
 		E0C0CB9A16F889540012971C /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CB9916F889540012971C /* ZFont.m */; };
 		E0C0CB9F16F889540012971C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CB9E16F889540012971C /* main.m */; };
 		E0C0CBA216F889540012971C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBA116F889540012971C /* AppDelegate.m */; };
-		E0C0CBA516F889540012971C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBA416F889540012971C /* RootViewController.m */; };
-		E0C0CBA816F889540012971C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBA716F889540012971C /* HelloWorldLayer.m */; };
+		E0C0CBBA16F88C240012971C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBB916F88C240012971C /* RootViewController.m */; };
+		E0C0CBBD16F88C430012971C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBBC16F88C430012971C /* HelloWorldLayer.m */; };
+		E0C0CBC416F8A9670012971C /* TCBoxer.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBC316F8A9670012971C /* TCBoxer.m */; };
+		E0C0CBCB16F8AE720012971C /* vonkaiser.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0C0CBC916F8AE720012971C /* vonkaiser.plist */; };
+		E0C0CBCC16F8AE720012971C /* vonkaiser.png in Resources */ = {isa = PBXBuildFile; fileRef = E0C0CBCA16F8AE720012971C /* vonkaiser.png */; };
+		E0C0CBCF16F8AF100012971C /* TCBoxerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBCE16F8AF100012971C /* TCBoxerAction.m */; };
+		E0C0CBD316F8B2840012971C /* TCVonKaiser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C0CBD216F8B2840012971C /* TCVonKaiser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -355,11 +360,20 @@
 		E0C0CB9E16F889540012971C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C0CBA016F889540012971C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0C0CBA116F889540012971C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E0C0CBA316F889540012971C /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		E0C0CBA416F889540012971C /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		E0C0CBA616F889540012971C /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E0C0CBA716F889540012971C /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		E0C0CBA916F889540012971C /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		E0C0CBB816F88C240012971C /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = Classes/ViewControllers/RootViewController.h; sourceTree = "<group>"; };
+		E0C0CBB916F88C240012971C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = Classes/ViewControllers/RootViewController.m; sourceTree = "<group>"; };
+		E0C0CBBB16F88C430012971C /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldLayer.h; path = Classes/Scenes/HelloWorldLayer.h; sourceTree = "<group>"; };
+		E0C0CBBC16F88C430012971C /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelloWorldLayer.m; path = Classes/Scenes/HelloWorldLayer.m; sourceTree = "<group>"; };
+		E0C0CBC216F8A9670012971C /* TCBoxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCBoxer.h; path = Classes/Models/TCBoxer.h; sourceTree = "<group>"; };
+		E0C0CBC316F8A9670012971C /* TCBoxer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCBoxer.m; path = Classes/Models/TCBoxer.m; sourceTree = "<group>"; };
+		E0C0CBC816F8ABE40012971C /* TCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDefines.h; sourceTree = "<group>"; };
+		E0C0CBC916F8AE720012971C /* vonkaiser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = vonkaiser.plist; sourceTree = "<group>"; };
+		E0C0CBCA16F8AE720012971C /* vonkaiser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vonkaiser.png; sourceTree = "<group>"; };
+		E0C0CBCD16F8AF100012971C /* TCBoxerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCBoxerAction.h; path = Classes/Models/TCBoxerAction.h; sourceTree = "<group>"; };
+		E0C0CBCE16F8AF100012971C /* TCBoxerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCBoxerAction.m; path = Classes/Models/TCBoxerAction.m; sourceTree = "<group>"; };
+		E0C0CBD116F8B2840012971C /* TCVonKaiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCVonKaiser.h; path = Classes/Models/Boxers/TCVonKaiser.h; sourceTree = "<group>"; };
+		E0C0CBD216F8B2840012971C /* TCVonKaiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCVonKaiser.m; path = Classes/Models/Boxers/TCVonKaiser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,13 +430,11 @@
 		E0C0CA4E16F889520012971C /* TCPunchOut */ = {
 			isa = PBXGroup;
 			children = (
+				E0C0CBB316F88B9F0012971C /* Classes */,
 				E0C0CBA016F889540012971C /* AppDelegate.h */,
 				E0C0CBA116F889540012971C /* AppDelegate.m */,
-				E0C0CBA316F889540012971C /* RootViewController.h */,
-				E0C0CBA416F889540012971C /* RootViewController.m */,
-				E0C0CBA616F889540012971C /* HelloWorldLayer.h */,
-				E0C0CBA716F889540012971C /* HelloWorldLayer.m */,
 				E0C0CBA916F889540012971C /* GameConfig.h */,
+				E0C0CBC816F8ABE40012971C /* TCDefines.h */,
 				E0C0CA4F16F889520012971C /* Resources */,
 				E0C0CA6316F889520012971C /* libs */,
 				E0C0CB9C16F889540012971C /* Supporting Files */,
@@ -433,6 +445,7 @@
 		E0C0CA4F16F889520012971C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0C0CBAF16F88B1A0012971C /* Sprites */,
 				E0C0CA5016F889520012971C /* Default.png */,
 				E0C0CA5216F889520012971C /* fps_images.png */,
 				E0C0CA5416F889520012971C /* Icon-72.png */,
@@ -758,6 +771,72 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E0C0CBAF16F88B1A0012971C /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0CBC916F8AE720012971C /* vonkaiser.plist */,
+				E0C0CBCA16F8AE720012971C /* vonkaiser.png */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		E0C0CBB316F88B9F0012971C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0CBB716F88BBD0012971C /* Scenes */,
+				E0C0CBB616F88BB30012971C /* View Controllers */,
+				E0C0CBB516F88BAD0012971C /* Models */,
+				E0C0CBB416F88BA60012971C /* Categories */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E0C0CBB416F88BA60012971C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		E0C0CBB516F88BAD0012971C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0CBD016F8B2660012971C /* Boxers */,
+				E0C0CBC216F8A9670012971C /* TCBoxer.h */,
+				E0C0CBC316F8A9670012971C /* TCBoxer.m */,
+				E0C0CBCD16F8AF100012971C /* TCBoxerAction.h */,
+				E0C0CBCE16F8AF100012971C /* TCBoxerAction.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E0C0CBB616F88BB30012971C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0CBB816F88C240012971C /* RootViewController.h */,
+				E0C0CBB916F88C240012971C /* RootViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E0C0CBB716F88BBD0012971C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0CBBB16F88C430012971C /* HelloWorldLayer.h */,
+				E0C0CBBC16F88C430012971C /* HelloWorldLayer.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		E0C0CBD016F8B2660012971C /* Boxers */ = {
+			isa = PBXGroup;
+			children = (
+				E0C0CBD116F8B2840012971C /* TCVonKaiser.h */,
+				E0C0CBD216F8B2840012971C /* TCVonKaiser.m */,
+			);
+			name = Boxers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -817,6 +896,8 @@
 				E0C0CA5D16F889520012971C /* Icon.png in Resources */,
 				E0C0CA5F16F889520012971C /* Icon@2x.png in Resources */,
 				E0C0CA6216F889520012971C /* iTunesArtwork in Resources */,
+				E0C0CBCB16F8AE720012971C /* vonkaiser.plist in Resources */,
+				E0C0CBCC16F8AE720012971C /* vonkaiser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,8 +1004,11 @@
 				E0C0CB9A16F889540012971C /* ZFont.m in Sources */,
 				E0C0CB9F16F889540012971C /* main.m in Sources */,
 				E0C0CBA216F889540012971C /* AppDelegate.m in Sources */,
-				E0C0CBA516F889540012971C /* RootViewController.m in Sources */,
-				E0C0CBA816F889540012971C /* HelloWorldLayer.m in Sources */,
+				E0C0CBBA16F88C240012971C /* RootViewController.m in Sources */,
+				E0C0CBBD16F88C430012971C /* HelloWorldLayer.m in Sources */,
+				E0C0CBC416F8A9670012971C /* TCBoxer.m in Sources */,
+				E0C0CBCF16F8AF100012971C /* TCBoxerAction.m in Sources */,
+				E0C0CBD316F8B2840012971C /* TCVonKaiser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +1060,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TCPunchOut/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = TCPunchOut/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -991,6 +1076,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TCPunchOut/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = TCPunchOut/Resources/Info.plist;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1018,6 +1104,7 @@
 				E0C0CBAE16F889540012971C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
