@@ -2,19 +2,23 @@
 //  AppDelegate.h
 //  TCPunchOut
 //
-//  Created by Theodore Calmes on 3/19/13.
+//  Created by theo on 3/19/13.
 //  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "cocos2d.h"
 
-@class RootViewController;
+@interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate>
+{
+	UIWindow *window_;
+	UINavigationController *navController_;
 
-@interface AppDelegate : NSObject <UIApplicationDelegate> {
-	UIWindow			*window;
-	RootViewController	*viewController;
+	CCDirectorIOS	*director_;							// weak ref
 }
 
 @property (nonatomic, retain) UIWindow *window;
+@property (readonly) UINavigationController *navController;
+@property (readonly) CCDirectorIOS *director;
 
 @end

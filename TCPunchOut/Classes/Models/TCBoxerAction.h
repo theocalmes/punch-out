@@ -6,12 +6,18 @@
 //
 //
 
+@class CCAnimation;
+
 @interface TCBoxerAction : NSObject
 
 @property (strong, nonatomic) id action;
+@property (strong, nonatomic) CCAnimation *annimation;
 @property (assign, nonatomic) NSInteger boxerState;
 @property (assign, nonatomic) BoxerDefenseState defenseState;
 
-- (id)initWithInitialSpriteFrame:(NSString *)spriteFileFrame;
+- (id)initWithBaseName:(NSString *)baseName frameNumbers:(NSArray *)numbers delay:(CGFloat)delay boxerState:(NSInteger)state;
+
+- (void)repeatForeverAction;
+- (void)sequenceActionWithTarget:(id)target callback:(SEL)callback;
 
 @end

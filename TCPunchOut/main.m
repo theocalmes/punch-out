@@ -2,7 +2,7 @@
 //  main.m
 //  TCPunchOut
 //
-//  Created by Theodore Calmes on 3/19/13.
+//  Created by theo on 3/19/13.
 //  Copyright __MyCompanyName__ 2013. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 int main(int argc, char *argv[]) {
     
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
+    int retVal = UIApplicationMain(argc, argv, nil, @"AppController");
     [pool release];
     return retVal;
 }

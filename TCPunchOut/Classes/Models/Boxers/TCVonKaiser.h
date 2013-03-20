@@ -29,7 +29,7 @@ typedef enum {
 @property (strong, nonatomic) TCBoxerAction *jabAction;
 @property (strong, nonatomic) TCBoxerAction *postJabAction;
 
-- (void)jab;
+- (void)startJab;
 - (void)idle;
 
 @end

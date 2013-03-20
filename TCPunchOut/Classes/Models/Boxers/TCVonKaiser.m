@@ -16,50 +16,92 @@ static NSString * const BoxerName = @"vonkaiser";
 
 - (id)init
 {
-    self = [super initWithSpriteFrameName:@"vonkaiser_idle_g0_00.png"];
+    self = [super init];
     if (self) {
-        
-        CCArray *idleFrames = [CCArray arrayWithCapacity:3];
-        for (int i = 0; i < 3; i++)
-        {
-            CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"%@_idle_g0_%02d.png", BoxerName, i]];
-            [idleFrames addObject:frame];
-        }
-        CCAnimation *idleAnimation = [CCAnimation animationWithSpriteFrames:[idleFrames getNSArray] delay:1.0/12.0];
-        
-        TCBoxerAction *tempIdleAction = [[TCBoxerAction alloc] init];
-        tempIdleAction.defenseState = kDefenseGaurdDown;
-        tempIdleAction.boxerState = kActionStateIdle;
-        tempIdleAction.action = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:idleAnimation]];
+        TCBoxerAction *tempIdleAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_idle_g0" frameNumbers:@[@0,@1,@2] delay:1.0/6.0 boxerState:kActionStateIdle];
+        [tempIdleAction repeatForeverAction];
         self.idleAction = tempIdleAction;
-        
-        CCArray *preJabFrames = [CCArray arrayWithCapacity:4];
-        for (int i = 0; i < 4; i++)
-        {
-            NSLog(@"%d mod 2 = %d", i, i%2);
-            CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"%@_preJab_g0_%02d.png", BoxerName, i%2]];
-            [preJabFrames addObject:frame];
-        }
-        CCAnimation *preJabAnimation = [CCAnimation animationWithSpriteFrames:[preJabFrames getNSArray] delay:1.0/12.0];
-        
-        TCBoxerAction *preJabAction = [[TCBoxerAction alloc] init];
-        preJabAction.defenseState = kDefenseGaurdDown;
-        preJabAction.boxerState = kActionStatePreJab;
-        preJabAction.action = [CCSequence actions:[CCAnimate actionWithAnimation:preJabAnimation], [CCCallFunc actionWithTarget:self selector:@selector(midJab)], nil];
-        self.jabAction = preJabAction;
-        
+
+        [self setupJabAction];
     }
     return self;
 }
 
-- (void)midJab
+- (void)respondToJab
 {
-    
+    if (self.defenseState == kDefenseDodgeUp)
+        [super respondToJab];
+}
+
+- (void)respondToUpper
+{
+    if (self.defenseState == kDefenseGaurdDown) {
+        [super respondToUpper];
+        NSLog(@"YOO");
+    }
+}
+
+#pragma mark - Utility Methods
+
+- (void)proccessAction:(TCBoxerAction *)boxerAction
+{
+    [self stopAllActions];
+    [self runAction:boxerAction.action];
+    self.actionState = boxerAction.boxerState;
+    self.defenseState = boxerAction.defenseState;
+}
+
+#pragma mark - Actions
+
+- (void)setupJabAction
+{
+    TCBoxerAction *preJabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_preJab_g0" frameNumbers:@[@0,@1,@0,@1] delay:1.0/24.0 boxerState:kActionStatePreJab];
+    [preJabAction sequenceActionWithTarget:self callback:@selector(jab)];
+    self.preJabAction = preJabAction;
+
+    TCBoxerAction *jabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_jab_g1" frameNumbers:@[@0,@1,@2] delay:1.0/2.0 boxerState:kActionStateJab];
+    [jabAction sequenceActionWithTarget:self callback:@selector(postJab)];
+    self.jabAction = jabAction;
+
+    TCBoxerAction *postJabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_postJab_g0" frameNumbers:@[@0] delay:1.0/2.0 boxerState:kActionStatePostJab];
+    [postJabAction sequenceActionWithTarget:self callback:@selector(idle)];
+    self.postJabAction = postJabAction;
+}
+
+#pragma mark - Public Transition Methods
+
+- (void)idle
+{
+    if (self.scaleX >= 3) self.scaleX = 3;
+    if (self.scaleY >= 3) self.scaleY = 3;
+    self.position = ccp(200, 200);
+    if (self.actionState != kActionStateIdle)
+        [self proccessAction:self.idleAction];
+}
+
+- (void)startJab
+{
+    if (self.actionState == kActionStateIdle)
+        [self proccessAction:self.preJabAction];
+}
+
+#pragma mark - Private Transition Methods
+
+- (void)jab
+{
+    if (self.actionState == kActionStatePreJab)
+        [self proccessAction:self.jabAction];
 }
 
 - (void)postJab
 {
-    
+    if (self.actionState == kActionStateJab) {
+        [self proccessAction:self.postJabAction];
+        self.position = ccp(self.position.x - 10, self.position.y - 25);
+        self.scaleX *= 1.05;
+        self.scaleY *= 1.05;
+    }
 }
+
 
 @end
