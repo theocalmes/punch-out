@@ -16,19 +16,17 @@
     self = [super init];
     if (self) {
         NSArray *attributes = [baseName componentsSeparatedByString:@"_"];
-        NSLog(@"attributes %@", attributes);
         if (attributes.count >= 2)
             [self setupStateFromAttribute:attributes[2]];
         else
             _defenseState = kDefenseNone;
 
-        NSLog(@"self,defensSTate = %d", _defenseState);
         CCArray *frames = [CCArray arrayWithCapacity:numbers.count];
         for (NSNumber *i in numbers) {
             CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"%@_%02d.png", baseName, i.integerValue]];
             [frames addObject:frame];
         }
-        _annimation = [CCAnimation animationWithFrames:[frames getNSArray] delay:delay];
+        _annimation = [CCAnimation animationWithSpriteFrames:[frames getNSArray] delay:delay];
         _boxerState = state;
     }
     return self;
@@ -36,16 +34,14 @@
 
 - (void)repeatForeverAction
 {
-    if (self.annimation) {
-        self.action = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:self.annimation]];
-    }
+    if (!self.annimation) return;
+    self.action = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:self.annimation]];
 }
 
 - (void)sequenceActionWithTarget:(id)target callback:(SEL)callback
 {
-    if (self.annimation) {
-        self.action = [CCSequence actions:[CCAnimate actionWithAnimation:self.annimation], [CCCallFunc actionWithTarget:target selector:callback], nil];
-    }
+    if (!self.annimation) return;
+    self.action = [CCSequence actions:[CCAnimate actionWithAnimation:self.annimation], [CCCallFunc actionWithTarget:target selector:callback], nil];
 }
 
 - (void)setupStateFromAttribute:(NSString *)attribute

@@ -131,14 +131,14 @@
 		E4B092FC16F944E90074DDD9 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = E4B092FB16F944E90074DDD9 /* vec4.c */; };
 		E4B0930116F944E90074DDD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0930016F944E90074DDD9 /* main.m */; };
 		E4B0930416F944E90074DDD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0930316F944E90074DDD9 /* AppDelegate.m */; };
-		E4B0930716F944E90074DDD9 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0930616F944E90074DDD9 /* HelloWorldLayer.m */; };
-		E4B0930A16F944E90074DDD9 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0930916F944E90074DDD9 /* IntroLayer.m */; };
-		E4B0931416F9450E0074DDD9 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0931016F9450E0074DDD9 /* ring.png */; };
-		E4B0931516F9450E0074DDD9 /* vonkaiser.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B0931216F9450E0074DDD9 /* vonkaiser.plist */; };
-		E4B0931616F9450E0074DDD9 /* vonkaiser.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0931316F9450E0074DDD9 /* vonkaiser.png */; };
 		E4B0932616F9451C0074DDD9 /* TCVonKaiser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0931B16F9451C0074DDD9 /* TCVonKaiser.m */; };
 		E4B0932716F9451C0074DDD9 /* TCBoxer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0931D16F9451C0074DDD9 /* TCBoxer.m */; };
 		E4B0932816F9451C0074DDD9 /* TCBoxerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0931F16F9451C0074DDD9 /* TCBoxerAction.m */; };
+		E4B0933B16F96BFC0074DDD9 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0933816F96BFC0074DDD9 /* ring.png */; };
+		E4B0933C16F96BFC0074DDD9 /* vonkaiser.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B0933916F96BFC0074DDD9 /* vonkaiser.plist */; };
+		E4B0933D16F96BFC0074DDD9 /* vonkaiser.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0933A16F96BFC0074DDD9 /* vonkaiser.png */; };
+		E4B0934216F96C0C0074DDD9 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0933F16F96C0C0074DDD9 /* HelloWorldLayer.m */; };
+		E4B0934316F96C0C0074DDD9 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0934116F96C0C0074DDD9 /* IntroLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -400,20 +400,20 @@
 		E4B0930016F944E90074DDD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4B0930216F944E90074DDD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4B0930316F944E90074DDD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E4B0930516F944E90074DDD9 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldLayer.h; path = ../../HelloWorldLayer.h; sourceTree = "<group>"; };
-		E4B0930616F944E90074DDD9 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldLayer.m; path = ../../HelloWorldLayer.m; sourceTree = "<group>"; };
-		E4B0930816F944E90074DDD9 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroLayer.h; path = ../../IntroLayer.h; sourceTree = "<group>"; };
-		E4B0930916F944E90074DDD9 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroLayer.m; path = ../../IntroLayer.m; sourceTree = "<group>"; };
-		E4B0931016F9450E0074DDD9 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ring.png; sourceTree = "<group>"; };
 		E4B0931116F9450E0074DDD9 /* TCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDefines.h; sourceTree = "<group>"; };
-		E4B0931216F9450E0074DDD9 /* vonkaiser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = vonkaiser.plist; sourceTree = "<group>"; };
-		E4B0931316F9450E0074DDD9 /* vonkaiser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vonkaiser.png; sourceTree = "<group>"; };
 		E4B0931A16F9451C0074DDD9 /* TCVonKaiser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCVonKaiser.h; sourceTree = "<group>"; };
 		E4B0931B16F9451C0074DDD9 /* TCVonKaiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCVonKaiser.m; sourceTree = "<group>"; };
 		E4B0931C16F9451C0074DDD9 /* TCBoxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBoxer.h; sourceTree = "<group>"; };
 		E4B0931D16F9451C0074DDD9 /* TCBoxer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBoxer.m; sourceTree = "<group>"; };
 		E4B0931E16F9451C0074DDD9 /* TCBoxerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBoxerAction.h; sourceTree = "<group>"; };
 		E4B0931F16F9451C0074DDD9 /* TCBoxerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBoxerAction.m; sourceTree = "<group>"; };
+		E4B0933816F96BFC0074DDD9 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring.png; path = Resources/Sprites/ring.png; sourceTree = "<group>"; };
+		E4B0933916F96BFC0074DDD9 /* vonkaiser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = vonkaiser.plist; path = Resources/Sprites/vonkaiser.plist; sourceTree = "<group>"; };
+		E4B0933A16F96BFC0074DDD9 /* vonkaiser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vonkaiser.png; path = Resources/Sprites/vonkaiser.png; sourceTree = "<group>"; };
+		E4B0933E16F96C0C0074DDD9 /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
+		E4B0933F16F96C0C0074DDD9 /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		E4B0934016F96C0C0074DDD9 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
+		E4B0934116F96C0C0074DDD9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -881,10 +881,10 @@
 		E4B0932016F9451C0074DDD9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				E4B0930816F944E90074DDD9 /* IntroLayer.h */,
-				E4B0930916F944E90074DDD9 /* IntroLayer.m */,
-				E4B0930516F944E90074DDD9 /* HelloWorldLayer.h */,
-				E4B0930616F944E90074DDD9 /* HelloWorldLayer.m */,
+				E4B0933E16F96C0C0074DDD9 /* HelloWorldLayer.h */,
+				E4B0933F16F96C0C0074DDD9 /* HelloWorldLayer.m */,
+				E4B0934016F96C0C0074DDD9 /* IntroLayer.h */,
+				E4B0934116F96C0C0074DDD9 /* IntroLayer.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -899,9 +899,9 @@
 		E4B0932B16F96B1A0074DDD9 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				E4B0931016F9450E0074DDD9 /* ring.png */,
-				E4B0931216F9450E0074DDD9 /* vonkaiser.plist */,
-				E4B0931316F9450E0074DDD9 /* vonkaiser.png */,
+				E4B0933816F96BFC0074DDD9 /* ring.png */,
+				E4B0933916F96BFC0074DDD9 /* vonkaiser.plist */,
+				E4B0933A16F96BFC0074DDD9 /* vonkaiser.png */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -969,9 +969,9 @@
 				E4B091A116F944E70074DDD9 /* Icon@2x.png in Resources */,
 				E4B091A416F944E70074DDD9 /* iTunesArtwork in Resources */,
 				E4B092E216F944E80074DDD9 /* ChangeLog in Resources */,
-				E4B0931416F9450E0074DDD9 /* ring.png in Resources */,
-				E4B0931516F9450E0074DDD9 /* vonkaiser.plist in Resources */,
-				E4B0931616F9450E0074DDD9 /* vonkaiser.png in Resources */,
+				E4B0933B16F96BFC0074DDD9 /* ring.png in Resources */,
+				E4B0933C16F96BFC0074DDD9 /* vonkaiser.plist in Resources */,
+				E4B0933D16F96BFC0074DDD9 /* vonkaiser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,11 +1084,11 @@
 				E4B092FC16F944E90074DDD9 /* vec4.c in Sources */,
 				E4B0930116F944E90074DDD9 /* main.m in Sources */,
 				E4B0930416F944E90074DDD9 /* AppDelegate.m in Sources */,
-				E4B0930716F944E90074DDD9 /* HelloWorldLayer.m in Sources */,
-				E4B0930A16F944E90074DDD9 /* IntroLayer.m in Sources */,
 				E4B0932616F9451C0074DDD9 /* TCVonKaiser.m in Sources */,
 				E4B0932716F9451C0074DDD9 /* TCBoxer.m in Sources */,
 				E4B0932816F9451C0074DDD9 /* TCBoxerAction.m in Sources */,
+				E4B0934216F96C0C0074DDD9 /* HelloWorldLayer.m in Sources */,
+				E4B0934316F96C0C0074DDD9 /* IntroLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1192,6 +1192,7 @@
 				E4B0930F16F944E90074DDD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

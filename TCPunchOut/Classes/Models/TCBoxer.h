@@ -12,7 +12,6 @@
 
 @property (assign, nonatomic) BoxerDefenseState defenseState;
 
-- (void)respondToUpper;
-- (void)respondToJab;
+- (void)respondToAttack:(HeroAttackState)attack;
 
 @end

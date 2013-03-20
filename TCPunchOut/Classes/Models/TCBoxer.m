@@ -10,14 +10,6 @@
 
 @implementation TCBoxer
 
-- (void)respondToJab
-{
-    NSLog(@"Boxer RespondToJab");
-}
-
-- (void)respondToUpper
-{
-    NSLog(@"Boxer RespondToJab");
-}
+- (void)respondToAttack:(HeroAttackState)attack {}
 
 @end

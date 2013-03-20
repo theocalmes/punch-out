@@ -27,17 +27,51 @@ static NSString * const BoxerName = @"vonkaiser";
     return self;
 }
 
-- (void)respondToJab
+- (void)respondToAttack:(HeroAttackState)attack
 {
-    if (self.defenseState == kDefenseDodgeUp)
-        [super respondToJab];
-}
+    if (attack == kActionStateNone) return;
 
-- (void)respondToUpper
-{
-    if (self.defenseState == kDefenseGaurdDown) {
-        [super respondToUpper];
-        NSLog(@"YOO");
+    switch (self.defenseState) {
+        case kDefenseGaurdDown:
+            switch (attack) {
+                case kAttackLeftJab:
+                case kAttackRightJab:
+                    // Block
+                    break;
+                case kAttackLeftUpper:
+                    // Hit left
+                    break;
+                case kAttackRightUpper:
+                    // Hit right
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case kDefenseGaurdUp:
+            switch (attack) {
+                case kAttackLeftJab:
+                case kAttackRightJab:
+                    // Hit body
+                    break;
+                case kAttackRightUpper:
+                case kAttackLeftUpper:
+                    // Block
+                    break;
+                default:
+                    break;
+            }
+        case kDefenseDodgeDown:
+            switch (attack) {
+                case kAttackLeftJab:
+                case kAttackRightJab:
+                    // Hit body
+                    break;
+                default:
+                    break;
+            }
+        default:
+            break;
     }
 }
 
