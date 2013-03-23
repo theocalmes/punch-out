@@ -1,15 +1,28 @@
 typedef enum {
-    kDefenseNone = 0,
-    kDefenseGaurdDown,
-    kDefenseGaurdUp,
-    kDefenseDodgeUp,
-    kDefenseDodgeDown
+    kBoxerDefenseNone = 0,
+    kBoxerDefenseGaurdDown,
+    kBoxerDefenseGaurdUp,
+    kBoxerDefenseDodgeUp,
+    kBoxerDefenseDodgeDown
 } BoxerDefenseState;
 
 typedef enum {
-    kAttackNone = 0,
-    kAttackLeftUpper,
-    kAttackRightUpper,
-    kAttackRightJab,
-    kAttackLeftJab,
+    kBoxerAttackNone = 0,
+    kBoxerAttackBody,
+    kBoxerAttackHead
+} BoxerAttackState;
+
+typedef enum {
+    kHeroAttackNone = 0,
+    kHeroAttackLeftUpper,
+    kHeroAttackRightUpper,
+    kHeroAttackRightJab,
+    kHeroAttackLeftJab
 } HeroAttackState;
+
+typedef enum {
+    kHeroDefenseNone = 0,
+    kHeroDefenseBlock,
+    kHeroDefenseDodgeLeft,
+    kHeroDefenseDodgeRight
+} HeroDefenseState;

@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E44736BF16FCC97D0034DC16 /* TCBoxerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E44736BE16FCC97D0034DC16 /* TCBoxerAction.m */; };
+		E44736D616FD1F0E0034DC16 /* littlemac.plist in Resources */ = {isa = PBXBuildFile; fileRef = E44736D416FD1F0E0034DC16 /* littlemac.plist */; };
+		E44736D716FD1F0E0034DC16 /* littlemac.png in Resources */ = {isa = PBXBuildFile; fileRef = E44736D516FD1F0E0034DC16 /* littlemac.png */; };
+		E44BF57516FB24C900EA7C24 /* TCHero.m in Sources */ = {isa = PBXBuildFile; fileRef = E44BF57416FB24C900EA7C24 /* TCHero.m */; };
+		E44BF58316FB401E00EA7C24 /* Button1.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57716FB401E00EA7C24 /* Button1.png */; };
+		E44BF58416FB401E00EA7C24 /* Button1Sel.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57816FB401E00EA7C24 /* Button1Sel.png */; };
+		E44BF58516FB401E00EA7C24 /* Button2.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57916FB401E00EA7C24 /* Button2.png */; };
+		E44BF58616FB401E00EA7C24 /* Button2Sel.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57A16FB401E00EA7C24 /* Button2Sel.png */; };
+		E44BF58716FB401E00EA7C24 /* Button3.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57B16FB401E00EA7C24 /* Button3.png */; };
+		E44BF58816FB401E00EA7C24 /* Button3Sel.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57C16FB401E00EA7C24 /* Button3Sel.png */; };
+		E44BF58916FB401E00EA7C24 /* ButtonMinus.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57D16FB401E00EA7C24 /* ButtonMinus.png */; };
+		E44BF58A16FB401E00EA7C24 /* ButtonMinusSel.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57E16FB401E00EA7C24 /* ButtonMinusSel.png */; };
+		E44BF58B16FB401E00EA7C24 /* ButtonPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF57F16FB401E00EA7C24 /* ButtonPlus.png */; };
+		E44BF58C16FB401E00EA7C24 /* ButtonPlusSel.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF58016FB401E00EA7C24 /* ButtonPlusSel.png */; };
+		E44BF58D16FB401E00EA7C24 /* ButtonStar.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF58116FB401E00EA7C24 /* ButtonStar.png */; };
+		E44BF58E16FB401E00EA7C24 /* ButtonStarSel.png in Resources */ = {isa = PBXBuildFile; fileRef = E44BF58216FB401E00EA7C24 /* ButtonStarSel.png */; };
 		E4B0917916F944E70074DDD9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B0917816F944E70074DDD9 /* QuartzCore.framework */; };
 		E4B0917B16F944E70074DDD9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B0917A16F944E70074DDD9 /* OpenGLES.framework */; };
 		E4B0917D16F944E70074DDD9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B0917C16F944E70074DDD9 /* OpenAL.framework */; };
@@ -133,7 +149,6 @@
 		E4B0930416F944E90074DDD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0930316F944E90074DDD9 /* AppDelegate.m */; };
 		E4B0932616F9451C0074DDD9 /* TCVonKaiser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0931B16F9451C0074DDD9 /* TCVonKaiser.m */; };
 		E4B0932716F9451C0074DDD9 /* TCBoxer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0931D16F9451C0074DDD9 /* TCBoxer.m */; };
-		E4B0932816F9451C0074DDD9 /* TCBoxerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B0931F16F9451C0074DDD9 /* TCBoxerAction.m */; };
 		E4B0933B16F96BFC0074DDD9 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0933816F96BFC0074DDD9 /* ring.png */; };
 		E4B0933C16F96BFC0074DDD9 /* vonkaiser.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4B0933916F96BFC0074DDD9 /* vonkaiser.plist */; };
 		E4B0933D16F96BFC0074DDD9 /* vonkaiser.png in Resources */ = {isa = PBXBuildFile; fileRef = E4B0933A16F96BFC0074DDD9 /* vonkaiser.png */; };
@@ -142,6 +157,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E44736BD16FCC97D0034DC16 /* TCBoxerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBoxerAction.h; sourceTree = "<group>"; };
+		E44736BE16FCC97D0034DC16 /* TCBoxerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBoxerAction.m; sourceTree = "<group>"; };
+		E44736D416FD1F0E0034DC16 /* littlemac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = littlemac.plist; sourceTree = "<group>"; };
+		E44736D516FD1F0E0034DC16 /* littlemac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = littlemac.png; sourceTree = "<group>"; };
+		E44BF57316FB24C900EA7C24 /* TCHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCHero.h; sourceTree = "<group>"; };
+		E44BF57416FB24C900EA7C24 /* TCHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCHero.m; sourceTree = "<group>"; };
+		E44BF57716FB401E00EA7C24 /* Button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button1.png; path = Resources/Buttons/Button1.png; sourceTree = "<group>"; };
+		E44BF57816FB401E00EA7C24 /* Button1Sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button1Sel.png; path = Resources/Buttons/Button1Sel.png; sourceTree = "<group>"; };
+		E44BF57916FB401E00EA7C24 /* Button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button2.png; path = Resources/Buttons/Button2.png; sourceTree = "<group>"; };
+		E44BF57A16FB401E00EA7C24 /* Button2Sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button2Sel.png; path = Resources/Buttons/Button2Sel.png; sourceTree = "<group>"; };
+		E44BF57B16FB401E00EA7C24 /* Button3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button3.png; path = Resources/Buttons/Button3.png; sourceTree = "<group>"; };
+		E44BF57C16FB401E00EA7C24 /* Button3Sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button3Sel.png; path = Resources/Buttons/Button3Sel.png; sourceTree = "<group>"; };
+		E44BF57D16FB401E00EA7C24 /* ButtonMinus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonMinus.png; path = Resources/Buttons/ButtonMinus.png; sourceTree = "<group>"; };
+		E44BF57E16FB401E00EA7C24 /* ButtonMinusSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonMinusSel.png; path = Resources/Buttons/ButtonMinusSel.png; sourceTree = "<group>"; };
+		E44BF57F16FB401E00EA7C24 /* ButtonPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonPlus.png; path = Resources/Buttons/ButtonPlus.png; sourceTree = "<group>"; };
+		E44BF58016FB401E00EA7C24 /* ButtonPlusSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonPlusSel.png; path = Resources/Buttons/ButtonPlusSel.png; sourceTree = "<group>"; };
+		E44BF58116FB401E00EA7C24 /* ButtonStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonStar.png; path = Resources/Buttons/ButtonStar.png; sourceTree = "<group>"; };
+		E44BF58216FB401E00EA7C24 /* ButtonStarSel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonStarSel.png; path = Resources/Buttons/ButtonStarSel.png; sourceTree = "<group>"; };
 		E4B0917516F944E70074DDD9 /* TCPunchOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCPunchOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B0917816F944E70074DDD9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E4B0917A16F944E70074DDD9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -405,8 +438,6 @@
 		E4B0931B16F9451C0074DDD9 /* TCVonKaiser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCVonKaiser.m; sourceTree = "<group>"; };
 		E4B0931C16F9451C0074DDD9 /* TCBoxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBoxer.h; sourceTree = "<group>"; };
 		E4B0931D16F9451C0074DDD9 /* TCBoxer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBoxer.m; sourceTree = "<group>"; };
-		E4B0931E16F9451C0074DDD9 /* TCBoxerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCBoxerAction.h; sourceTree = "<group>"; };
-		E4B0931F16F9451C0074DDD9 /* TCBoxerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCBoxerAction.m; sourceTree = "<group>"; };
 		E4B0933816F96BFC0074DDD9 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring.png; path = Resources/Sprites/ring.png; sourceTree = "<group>"; };
 		E4B0933916F96BFC0074DDD9 /* vonkaiser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = vonkaiser.plist; path = Resources/Sprites/vonkaiser.plist; sourceTree = "<group>"; };
 		E4B0933A16F96BFC0074DDD9 /* vonkaiser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vonkaiser.png; path = Resources/Sprites/vonkaiser.png; sourceTree = "<group>"; };
@@ -436,6 +467,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E44BF57616FB400C00EA7C24 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E44BF57716FB401E00EA7C24 /* Button1.png */,
+				E44BF57816FB401E00EA7C24 /* Button1Sel.png */,
+				E44BF57916FB401E00EA7C24 /* Button2.png */,
+				E44BF57A16FB401E00EA7C24 /* Button2Sel.png */,
+				E44BF57B16FB401E00EA7C24 /* Button3.png */,
+				E44BF57C16FB401E00EA7C24 /* Button3Sel.png */,
+				E44BF57D16FB401E00EA7C24 /* ButtonMinus.png */,
+				E44BF57E16FB401E00EA7C24 /* ButtonMinusSel.png */,
+				E44BF57F16FB401E00EA7C24 /* ButtonPlus.png */,
+				E44BF58016FB401E00EA7C24 /* ButtonPlusSel.png */,
+				E44BF58116FB401E00EA7C24 /* ButtonStar.png */,
+				E44BF58216FB401E00EA7C24 /* ButtonStarSel.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		E4B0916C16F944E70074DDD9 = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +536,7 @@
 		E4B0918B16F944E70074DDD9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E44BF57616FB400C00EA7C24 /* Buttons */,
 				E4B0932B16F96B1A0074DDD9 /* Sprites */,
 				E4B0918C16F944E70074DDD9 /* Default.png */,
 				E4B0918E16F944E70074DDD9 /* Default-Landscape~ipad.png */,
@@ -863,8 +914,10 @@
 				E4B0931916F9451C0074DDD9 /* Boxers */,
 				E4B0931C16F9451C0074DDD9 /* TCBoxer.h */,
 				E4B0931D16F9451C0074DDD9 /* TCBoxer.m */,
-				E4B0931E16F9451C0074DDD9 /* TCBoxerAction.h */,
-				E4B0931F16F9451C0074DDD9 /* TCBoxerAction.m */,
+				E44BF57316FB24C900EA7C24 /* TCHero.h */,
+				E44BF57416FB24C900EA7C24 /* TCHero.m */,
+				E44736BD16FCC97D0034DC16 /* TCBoxerAction.h */,
+				E44736BE16FCC97D0034DC16 /* TCBoxerAction.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -899,6 +952,8 @@
 		E4B0932B16F96B1A0074DDD9 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				E44736D416FD1F0E0034DC16 /* littlemac.plist */,
+				E44736D516FD1F0E0034DC16 /* littlemac.png */,
 				E4B0933816F96BFC0074DDD9 /* ring.png */,
 				E4B0933916F96BFC0074DDD9 /* vonkaiser.plist */,
 				E4B0933A16F96BFC0074DDD9 /* vonkaiser.png */,
@@ -972,6 +1027,20 @@
 				E4B0933B16F96BFC0074DDD9 /* ring.png in Resources */,
 				E4B0933C16F96BFC0074DDD9 /* vonkaiser.plist in Resources */,
 				E4B0933D16F96BFC0074DDD9 /* vonkaiser.png in Resources */,
+				E44BF58316FB401E00EA7C24 /* Button1.png in Resources */,
+				E44BF58416FB401E00EA7C24 /* Button1Sel.png in Resources */,
+				E44BF58516FB401E00EA7C24 /* Button2.png in Resources */,
+				E44BF58616FB401E00EA7C24 /* Button2Sel.png in Resources */,
+				E44BF58716FB401E00EA7C24 /* Button3.png in Resources */,
+				E44BF58816FB401E00EA7C24 /* Button3Sel.png in Resources */,
+				E44BF58916FB401E00EA7C24 /* ButtonMinus.png in Resources */,
+				E44BF58A16FB401E00EA7C24 /* ButtonMinusSel.png in Resources */,
+				E44BF58B16FB401E00EA7C24 /* ButtonPlus.png in Resources */,
+				E44BF58C16FB401E00EA7C24 /* ButtonPlusSel.png in Resources */,
+				E44BF58D16FB401E00EA7C24 /* ButtonStar.png in Resources */,
+				E44BF58E16FB401E00EA7C24 /* ButtonStarSel.png in Resources */,
+				E44736D616FD1F0E0034DC16 /* littlemac.plist in Resources */,
+				E44736D716FD1F0E0034DC16 /* littlemac.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,9 +1155,10 @@
 				E4B0930416F944E90074DDD9 /* AppDelegate.m in Sources */,
 				E4B0932616F9451C0074DDD9 /* TCVonKaiser.m in Sources */,
 				E4B0932716F9451C0074DDD9 /* TCBoxer.m in Sources */,
-				E4B0932816F9451C0074DDD9 /* TCBoxerAction.m in Sources */,
 				E4B0934216F96C0C0074DDD9 /* HelloWorldLayer.m in Sources */,
 				E4B0934316F96C0C0074DDD9 /* IntroLayer.m in Sources */,
+				E44BF57516FB24C900EA7C24 /* TCHero.m in Sources */,
+				E44736BF16FCC97D0034DC16 /* TCBoxerAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

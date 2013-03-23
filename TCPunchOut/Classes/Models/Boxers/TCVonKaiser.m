@@ -8,9 +8,22 @@
 
 #import "TCVonKaiser.h"
 #import "TCBoxerAction.h"
-#import "cocos2d.h"
 
 static NSString * const BoxerName = @"vonkaiser";
+
+@interface TCVonKaiser ()
+@property (strong, nonatomic) TCBoxerAction *blockBodyAction;
+@property (strong, nonatomic) TCBoxerAction *blockFaceAction;
+@property (strong, nonatomic) TCBoxerAction *bodyHitAction;
+@property (strong, nonatomic) TCBoxerAction *leftFaceHitAction;
+@property (strong, nonatomic) TCBoxerAction *rightFaceHitAction;
+
+@property (strong, nonatomic) TCBoxerAction *preJabAction;
+@property (strong, nonatomic) TCBoxerAction *jabAction;
+@property (strong, nonatomic) TCBoxerAction *postJabAction;
+@property (strong, nonatomic) TCBoxerAction *postJabReturnAction;
+
+@end
 
 @implementation TCVonKaiser
 
@@ -18,61 +31,14 @@ static NSString * const BoxerName = @"vonkaiser";
 {
     self = [super init];
     if (self) {
-        TCBoxerAction *tempIdleAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_idle_g0" frameNumbers:@[@0,@1,@2] delay:1.0/6.0 boxerState:kActionStateIdle];
+        TCBoxerAction *tempIdleAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_idle_g0" frameNumbers:@[@0,@1,@2] delay:1.0/6.0 boxerState:kBoxerActionStateIdle];
         [tempIdleAction repeatForeverAction];
         self.idleAction = tempIdleAction;
 
         [self setupJabAction];
+        [self setupAttackResponseActions];
     }
     return self;
-}
-
-- (void)respondToAttack:(HeroAttackState)attack
-{
-    if (attack == kActionStateNone) return;
-
-    switch (self.defenseState) {
-        case kDefenseGaurdDown:
-            switch (attack) {
-                case kAttackLeftJab:
-                case kAttackRightJab:
-                    // Block
-                    break;
-                case kAttackLeftUpper:
-                    // Hit left
-                    break;
-                case kAttackRightUpper:
-                    // Hit right
-                    break;
-                default:
-                    break;
-            }
-            break;
-        case kDefenseGaurdUp:
-            switch (attack) {
-                case kAttackLeftJab:
-                case kAttackRightJab:
-                    // Hit body
-                    break;
-                case kAttackRightUpper:
-                case kAttackLeftUpper:
-                    // Block
-                    break;
-                default:
-                    break;
-            }
-        case kDefenseDodgeDown:
-            switch (attack) {
-                case kAttackLeftJab:
-                case kAttackRightJab:
-                    // Hit body
-                    break;
-                default:
-                    break;
-            }
-        default:
-            break;
-    }
 }
 
 #pragma mark - Utility Methods
@@ -83,59 +49,112 @@ static NSString * const BoxerName = @"vonkaiser";
     [self runAction:boxerAction.action];
     self.actionState = boxerAction.boxerState;
     self.defenseState = boxerAction.defenseState;
+    self.attackState = boxerAction.attackState;
 }
 
 #pragma mark - Actions
 
 - (void)setupJabAction
 {
-    TCBoxerAction *preJabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_preJab_g0" frameNumbers:@[@0,@1,@0,@1] delay:1.0/24.0 boxerState:kActionStatePreJab];
-    [preJabAction sequenceActionWithTarget:self callback:@selector(jab)];
-    self.preJabAction = preJabAction;
+    self.preJabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_preJab_g0" frameNumbers:@[@0,@1,@0,@1] delay:1.0/24.0 boxerState:kBoxerActionStatePreJab];
+    [self.preJabAction sequenceWithTarget:self callback:@selector(jab)];
 
-    TCBoxerAction *jabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_jab_g1" frameNumbers:@[@0,@1,@2] delay:1.0/2.0 boxerState:kActionStateJab];
-    [jabAction sequenceActionWithTarget:self callback:@selector(postJab)];
-    self.jabAction = jabAction;
+    self.jabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_jab_g1" frameNumbers:@[@0,@1,@2] delay:1.0/12.0 boxerState:kBoxerActionStateJab];
+    [self.jabAction sequenceWithTarget:self callback:@selector(postJab)];
 
-    TCBoxerAction *postJabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_postJab_g0" frameNumbers:@[@0] delay:1.0/2.0 boxerState:kActionStatePostJab];
-    [postJabAction sequenceActionWithTarget:self callback:@selector(idle)];
-    self.postJabAction = postJabAction;
+    self.postJabAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_postJab_g0" frameNumbers:@[@0] delay:1.0/6.0 boxerState:kBoxerActionStatePostJab];
+    self.postJabAction.attackState = kBoxerAttackBody;
+    [self.postJabAction moveByAmount:ccp(-5,-20) target:self callback:@selector(postJabReturn)];
+
+    self.postJabReturnAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_postJab_g0" frameNumbers:@[@0] delay:1.0/6.0 boxerState:kBoxerActionStatePostJabReturn];
+    [self.postJabReturnAction moveByAmount:ccp(0,0) target:self callback:@selector(idle)];
+}
+
+- (void)setupAttackResponseActions
+{
+    self.blockBodyAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_blockDown_g0" frameNumbers:@[@0, @1] delay:1.0/6.0 boxerState:kBoxerActionStateBlocking];
+    [self.blockBodyAction sequenceWithTarget:self callback:@selector(idle)];
+
+    self.blockFaceAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_blockUp_g1" frameNumbers:@[@0, @1] delay:1.0/6.0 boxerState:kBoxerActionStateBlocking];
+    [self.blockFaceAction sequenceWithTarget:self callback:@selector(idle)];
+
+    self.bodyHitAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_hitBody_g1" frameNumbers:@[@0, @0] delay:1.0/6.0 boxerState:kBoxerActionStateBodyHit];
+    [self.bodyHitAction sequenceWithTarget:self callback:@selector(idle)];
+
+    self.leftFaceHitAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_hitLeft_g0" frameNumbers:@[@0, @0] delay:1.0/6.0 boxerState:kBoxerActionStateHeadHit];
+    [self.leftFaceHitAction sequenceWithTarget:self callback:@selector(idle)];
+
+    self.rightFaceHitAction = [[TCBoxerAction alloc] initWithBaseName:@"vonkaiser_hitRight_g0" frameNumbers:@[@0, @0] delay:1.0/6.0 boxerState:kBoxerActionStateHeadHit];
+    [self.rightFaceHitAction sequenceWithTarget:self callback:@selector(idle)];
+
 }
 
 #pragma mark - Public Transition Methods
 
 - (void)idle
 {
-    if (self.scaleX >= 3) self.scaleX = 3;
-    if (self.scaleY >= 3) self.scaleY = 3;
-    self.position = ccp(200, 200);
-    if (self.actionState != kActionStateIdle)
+    self.position = self.ringPosition;
+     
+    if (self.actionState != kBoxerActionStateIdle)
         [self proccessAction:self.idleAction];
 }
 
 - (void)startJab
 {
-    if (self.actionState == kActionStateIdle)
+    if (self.actionState == kBoxerActionStateIdle)
         [self proccessAction:self.preJabAction];
 }
 
 #pragma mark - Private Transition Methods
 
+- (void)blockBody
+{
+    if (self.actionState != kBoxerActionStateBlocking)
+        [self proccessAction:self.blockBodyAction];
+}
+
+- (void)blockFace
+{
+    if (self.actionState != kBoxerActionStateBlocking)
+        [self proccessAction:self.blockFaceAction];
+}
+
+- (void)bodyHit
+{
+    if (self.actionState != kBoxerActionStateHeadHit || self.actionState != kBoxerActionStateBodyHit)
+        [self proccessAction:self.bodyHitAction];
+}
+
+- (void)leftFaceHit
+{
+    if (self.actionState != kBoxerActionStateHeadHit || self.actionState != kBoxerActionStateBodyHit)
+        [self proccessAction:self.leftFaceHitAction];
+}
+
+- (void)rightFaceHit
+{
+    if (self.actionState != kBoxerActionStateHeadHit || self.actionState != kBoxerActionStateBodyHit)
+        [self proccessAction:self.rightFaceHitAction];
+}
+
 - (void)jab
 {
-    if (self.actionState == kActionStatePreJab)
+    if (self.actionState == kBoxerActionStatePreJab)
         [self proccessAction:self.jabAction];
 }
 
 - (void)postJab
 {
-    if (self.actionState == kActionStateJab) {
+    if (self.actionState == kBoxerActionStateJab) {
         [self proccessAction:self.postJabAction];
-        self.position = ccp(self.position.x - 10, self.position.y - 25);
-        self.scaleX *= 1.05;
-        self.scaleY *= 1.05;
     }
 }
 
+- (void)postJabReturn
+{
+    if (self.actionState == kBoxerActionStatePostJab) {
+        [self proccessAction:self.postJabReturnAction];
+    }
+}
 
 @end

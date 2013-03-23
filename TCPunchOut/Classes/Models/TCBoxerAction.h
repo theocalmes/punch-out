@@ -1,23 +1,23 @@
 //
-//  TCBoxerAction.h
+//  TCAction.h
 //  TCPunchOut
 //
-//  Created by Theodore Calmes on 3/19/13.
+//  Created by theo on 3/22/13.
 //
 //
-
-@class CCAnimation;
 
 @interface TCBoxerAction : NSObject
 
 @property (strong, nonatomic) id action;
 @property (strong, nonatomic) CCAnimation *annimation;
 @property (assign, nonatomic) NSInteger boxerState;
-@property (assign, nonatomic) BoxerDefenseState defenseState;
+@property (assign, nonatomic) NSInteger defenseState;
+@property (assign, nonatomic) NSInteger attackState;
 
 - (id)initWithBaseName:(NSString *)baseName frameNumbers:(NSArray *)numbers delay:(CGFloat)delay boxerState:(NSInteger)state;
 
 - (void)repeatForeverAction;
-- (void)sequenceActionWithTarget:(id)target callback:(SEL)callback;
+- (void)sequenceWithTarget:(id)target callback:(SEL)callback;
+- (void)moveByAmount:(CGPoint)amount target:(id)target callback:(SEL)callback;
 
 @end

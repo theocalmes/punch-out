@@ -16,13 +16,19 @@
 #pragma mark - HelloWorldLayer
 
 #import "TCVonKaiser.h"
+#import "TCHero.h"
 #import "CCTouchDispatcher.h"
+
+@interface HelloWorldLayer ()
+{
+    TCVonKaiser *vonKaiser;
+    TCHero *littlemac;
+    CCLabelTTF *_label;
+}
+@end
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
-
-TCVonKaiser *vonKaiser;
-
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -47,6 +53,8 @@ TCVonKaiser *vonKaiser;
 
         self.isTouchEnabled = YES;
 
+        CGSize winSize = [[CCDirector sharedDirector] winSize];
+
         CCSprite* background = [CCSprite spriteWithFile:@"ring.png"];
         background.tag = 1;
         background.scaleX = 3;
@@ -59,21 +67,94 @@ TCVonKaiser *vonKaiser;
         CCSpriteBatchNode *_batchNode = [CCSpriteBatchNode batchNodeWithFile:@"vonkaiser.png"];
         [self addChild:_batchNode];
 
-        NSLog(@"CACHE %@", [[CCSpriteFrameCache sharedSpriteFrameCache] description]);
-        NSLog(@"HERE");
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"littlemac.plist"];
+        CCSpriteBatchNode *_batchNode2 = [CCSpriteBatchNode batchNodeWithFile:@"littlemac.png"];
+        [self addChild:_batchNode2];
 
         vonKaiser = [[TCVonKaiser alloc] init];
-        vonKaiser.actionState = kActionStateNone;
-        vonKaiser.position = ccp(200, 200);
+        vonKaiser.actionState = 0;
+        vonKaiser.position = ccp(200, 150);
+        vonKaiser.ringPosition = vonKaiser.position;
         vonKaiser.scaleX = 3;
         vonKaiser.scaleY = 3;
         [vonKaiser idle];
-
         [self addChild:vonKaiser];
 
+        littlemac = [[TCHero alloc] init];
+        littlemac.actionState = 0;
+        littlemac.position = ccp(190, 100);
+        littlemac.ringPosition = littlemac.position;
+        littlemac.scaleX = 3;
+        littlemac.scaleY = 3;
+        [littlemac idle];
+        [self addChild:littlemac];
+
         [self schedule:@selector(nextFrame:)];
+
+        _label = [[CCLabelTTF labelWithString:@"Last button: None"
+                                   dimensions:CGSizeMake(320, 50) alignment:UITextAlignmentCenter
+                                     fontName:@"Arial" fontSize:32.0] retain];
+        _label.position = ccp(200, 20);
+        [self addChild:_label];
+
+        // Standard method to create a button
+        CCMenuItem *upperCutLeft = [CCMenuItemImage
+                                    itemFromNormalImage:@"Button1.png" selectedImage:@"Button1Sel.png"
+                                    target:self selector:@selector(upperCutLeftButtonTapped:)];
+        upperCutLeft.position = ccp(60, 140);
+        upperCutLeft.scale = 2;
+
+        CCMenuItem *upperCutRight = [CCMenuItemImage
+                                itemFromNormalImage:@"Button1.png" selectedImage:@"Button1Sel.png"
+                                target:self selector:@selector(upperCutRightButtonTapped:)];
+        upperCutRight.position = ccp(winSize.width - 60, 140);
+        upperCutRight.scale = 2;
+
+        CCMenuItem *jabRight = [CCMenuItemImage
+                                     itemFromNormalImage:@"Button2.png" selectedImage:@"Button2Sel.png"
+                                     target:self selector:@selector(jabRightButtonTapped:)];
+        jabRight.position = ccp(winSize.width - 60, 80);
+        jabRight.scale = 2;
+
+        CCMenuItem *jabLeft = [CCMenuItemImage
+                                itemFromNormalImage:@"Button2.png" selectedImage:@"Button2Sel.png"
+                                target:self selector:@selector(jabLeftButtonTapped:)];
+        jabLeft.position = ccp(60, 80);
+        jabLeft.scale = 2;
+
+        CCMenu *menu = [CCMenu menuWithItems:upperCutLeft, upperCutRight, jabRight, jabLeft, nil];
+        menu.position = CGPointZero;
+        [self addChild:menu];
 	}
 	return self;
+}
+
+- (void)upperCutLeftButtonTapped:(id)sender
+{
+    //[vonKaiser respondToAttack:kHeroAttackLeftUpper];
+    _label.string = @"Left Upper";
+    [littlemac leftUpper];
+}
+
+- (void)upperCutRightButtonTapped:(id)sender
+{
+    //[vonKaiser respondToAttack:kHeroAttackRightUpper];
+    _label.string = @"Right Upper";
+    [littlemac rightUpper];
+}
+
+- (void)jabRightButtonTapped:(id)sender
+{
+    //[vonKaiser respondToAttack:kHeroAttackRightJab];
+    [littlemac rightJab];
+    _label.string = @"Right Jab";
+}
+
+- (void)jabLeftButtonTapped:(id)sender
+{
+    //[vonKaiser respondToAttack:kHeroAttackLeftJab];
+    [littlemac leftJab];
+    _label.string = @"Left Jab";
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -85,8 +166,8 @@ TCVonKaiser *vonKaiser;
 {
     CGPoint location = [self convertTouchToNodeSpace:touch];
 
-    NSLog(@"called");
-    [vonKaiser respondToUpper];
+    //NSLog(@"called");
+    //[vonKaiser respondToAttack:kHeroAttackRightJab];
 }
 
 - (void)registerWithTouchDispatcher
@@ -96,8 +177,9 @@ TCVonKaiser *vonKaiser;
 
 - (void)nextFrame:(ccTime)dt
 {
-    //NSLog(@"dt:%F", dt);
-    if (vonKaiser.actionState == kActionStateIdle) {
+    [littlemac respondToAttack:vonKaiser.attackState];
+    [vonKaiser respondToAttack:littlemac.attackState];
+    if (vonKaiser.actionState == kBoxerActionStateIdle) {
         if (arc4random()%100 > 95) {
             [vonKaiser startJab];
         } else {

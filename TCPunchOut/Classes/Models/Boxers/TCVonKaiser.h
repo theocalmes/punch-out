@@ -9,11 +9,16 @@
 #import "TCBoxer.h"
 
 typedef enum {
-    kActionStateNone = 0,
-    kActionStateIdle,
-    kActionStatePreJab,
-    kActionStateJab,
-    kActionStatePostJab
+    kBoxerActionStateNone = 0,
+    kBoxerActionStateIdle,
+    kBoxerActionStatePreJab,
+    kBoxerActionStateJab,
+    kBoxerActionStatePostJab,
+    kBoxerActionStatePostJabReturn,
+    kBoxerActionStateStunned,
+    kBoxerActionStateBlocking,
+    kBoxerActionStateBodyHit,
+    kBoxerActionStateHeadHit
 } BoxerActionState;
 
 @class TCBoxerAction;
@@ -24,10 +29,6 @@ typedef enum {
 
 // Actions
 @property (strong, nonatomic) TCBoxerAction *idleAction;
-
-@property (strong, nonatomic) TCBoxerAction *preJabAction;
-@property (strong, nonatomic) TCBoxerAction *jabAction;
-@property (strong, nonatomic) TCBoxerAction *postJabAction;
 
 - (void)startJab;
 - (void)idle;
